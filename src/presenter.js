@@ -13,7 +13,7 @@ button.addEventListener("click", (event) => {
 
   //list.push(tarea);
  
-  if (tarea.value == '' || tarea.value == null || tarea.value == " ")
+  if (tarea.value.trim() == '' || tarea.value == null)
   {
     alert("No es posible registrar una tarea pendiente sin descripción");
   }
