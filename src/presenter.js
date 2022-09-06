@@ -12,8 +12,16 @@ button.addEventListener("click", (event) => {
   event.preventDefault();
 
   //list.push(tarea);
+ 
+  if (tarea.value == '' || tarea.value == null || tarea.value == " ")
+  {
+    alert("No es posible registrar una tarea pendiente sin descripción");
+  }
+  else
+  {
+    div.innerHTML = "<p>"+ tarea.value.toString() + "</p>";
 
-  div.innerHTML = "<p>"+ tarea.value.toString();
+  }
 
   /*for (var i=0; i <list.length; i++)
   {
