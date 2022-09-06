@@ -4,28 +4,28 @@ import sumar from "./sumador";
 const tarea = document.querySelector("#tarea");
 const form = document.querySelector("#sumar-form");
 const button = document.querySelector("#registro")
-const div = document.querySelector("#resultado-div");
+const ol = document.querySelector("#resultado-ol");
 
-//let list = []
+let list = []
+let lista = ""
 
 button.addEventListener("click", (event) => {
   event.preventDefault();
 
-  //list.push(tarea);
- 
-  if (tarea.value.trim() == '' || tarea.value == null)
+  list.push(tarea);
+
+  if (tarea.value.trim() == '' || tarea.value == null )
   {
     alert("No es posible registrar una tarea pendiente sin descripción");
   }
   else
   {
-    div.innerHTML = "<p>"+ tarea.value.toString() + "</p>";
+    for (var i=0; i <list.length; i++)
+    {
+      console.log(list[i].value)
+      lista+= `<li>${list[i].value}</li>`
+    }  
+    ol.innerHTML =lista;
 
   }
-
-  /*for (var i=0; i <list.length; i++)
-  {
-    div.innerHTML = `<li>${list[i].value}<li>`
-  }*/
-  
 });
