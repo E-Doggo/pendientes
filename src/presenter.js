@@ -1,15 +1,23 @@
+import { transformFileAsync } from "@babel/core";
 import sumar from "./sumador";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
+const tarea = document.querySelector("#tarea");
 const form = document.querySelector("#sumar-form");
+const button = document.querySelector("#registro")
 const div = document.querySelector("#resultado-div");
 
-form.addEventListener("submit", (event) => {
+//let list = []
+
+button.addEventListener("click", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  //list.push(tarea);
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  div.innerHTML = "<p>"+ tarea.value.toString();
+
+  /*for (var i=0; i <list.length; i++)
+  {
+    div.innerHTML = `<li>${list[i].value}<li>`
+  }*/
+  
 });
